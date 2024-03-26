@@ -37,7 +37,7 @@ const Login = ({}) => {
       });
 
       localStorage.setItem("candidate", res.data.data.data._id);
-
+      localStorage.setItem("token", res.data.data.accessToken);
       setIsAuthenticated(true);
 
       console.log("token created", res);

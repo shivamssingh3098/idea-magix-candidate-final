@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Container, Typography, Box } from "@mui/material";
 import axios from "axios";
+import { baseUrl } from "../url";
 
 const CandidateProfile = () => {
   const [data, setData] = useState({});
   const getAllInstructors = async () => {
-    const res = await axios.get(`/api/v1/candidate/candidate-profile`);
+    const res = await axios.get(
+      `${baseUrl}/api/v1/candidate/candidate-profile`
+    );
     setData(res.data.jobs);
 
     console.log("All instructor", res);

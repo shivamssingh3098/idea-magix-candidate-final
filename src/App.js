@@ -25,6 +25,8 @@ import Registration from "./component/home/Registration";
 import { baseUrl } from "./component/url";
 
 function App() {
+  axios.defaults.headers.common["Authorization"] =
+    localStorage.getItem("token");
   const { isAuthenticated, setIsAuthenticated, loginType } =
     useContext(AdminDataContext);
 
