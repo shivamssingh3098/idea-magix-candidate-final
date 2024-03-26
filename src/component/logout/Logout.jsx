@@ -10,7 +10,8 @@ const Logout = (props) => {
     await axios.post(`${baseUrl}/api/v1/candidate/logout`);
 
     setIsAuthenticated(false);
-    // localStorage.removeItem("loginType");
+    localStorage.removeItem("token");
+    // localStorage.setItem("token", res.data.data.accessToken);
     localStorage.clear();
     return navigate("/login");
   };
